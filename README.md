@@ -6,8 +6,6 @@ Premier deploiement :
 
 `nix-shell -p git`
 
-`sudo mkdir /ect/nixos/custom`
-
 `cd /etc/nixos`
 
 `sudo git clone https://github.com/DavidBrigand/custom.git`
