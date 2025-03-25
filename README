@@ -5,5 +5,3 @@ Se déplacer dans la configuration NixOS : `cd /etc/nixos`
 Cloner le repository : `sudo git clone https://github.com/DavidBrigand/custom.git`
 Editer le fichier configuration : `nano /etc/nixos/configuration.nix`
 Ajouter `./custom` dans la section **Import**
-
-**test en gras**
