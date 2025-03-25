@@ -1,4 +1,5 @@
-####Ma configuration Custom de NixOS####
+####Ma configuration Custom de NixOS
+
 Installer git temporairement avec : `nix-shell -p git`
 Se déplacer dans la configuration NixOS : `cd /etc/nixos`
 Cloner le repository : `sudo git clone https://github.com/DavidBrigand/custom.git`
