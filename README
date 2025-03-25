@@ -1,1 +1,6 @@
-*Test de creation de fichier README*
+####Ma configuration Custom de NixOS####
+Installer git temporairement avec : `nix-shell -p git`
+Se déplacer dans la configuration NixOS : `cd /etc/nixos`
+Cloner le repository : `sudo git clone https://github.com/DavidBrigand/custom.git`
+Editer le fichier configuration : `nano /etc/nixos/configuration.nix`
+Ajouter `./custom` dans la section **Import**
