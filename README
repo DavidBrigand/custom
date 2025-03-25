@@ -6,4 +6,4 @@ Cloner le repository : `sudo git clone https://github.com/DavidBrigand/custom.gi
 Editer le fichier configuration : `nano /etc/nixos/configuration.nix`
 Ajouter `./custom` dans la section **Import**
 
-**test ebn gras**
+**test en gras**
