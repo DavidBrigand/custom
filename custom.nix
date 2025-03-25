@@ -24,7 +24,7 @@
 	hunspellDicts.fr-moderne
 	#Virtualisation
 	qemu #hyperviseur qemu
-	quickemu # Quickly create and run optimised Windows, macOS and Linux virtual machines
+	quickemu # Outils qemu voir https://github.com/quickemu-project/quickemu
 	# Autres
 	celluloid
 	vscodium
