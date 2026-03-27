@@ -1,9 +1,8 @@
 {
   imports = [
     ./custom.nix
-    #./cifs.nix
+    ./cifs.nix
     #./version.nix
-    
     #./nh.nix
     ./boot.nix
     ./gnome.nix
