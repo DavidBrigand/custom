@@ -54,4 +54,21 @@
       "dir_mode=0777"
     ];
   };
+  #Disque home externe pour les données de Steam
+  fileSystems."/media/data-externe" = {
+    device = "/dev/disk/by-uuid/8cdd8fde-c55f-4778-ab30-02aa7ba14465";
+    fsType = "ext4";
+    options = [ "nofail" "defaults" ];
+  };
+  # Le Bind Mount : On lie le sous-dossier Fedora à ton Home NixOS
+  # Cela permet à Steam de voir tes jeux comme s'ils étaient sur ton SSD principal
+  fileSystems."/home/david/Games" = {
+    device = "/media/data-externe/david-fedora/Games";
+    options = [ "bind" "nofail" "user" "x-systemd.requires=/media/data-externe" ];
+  };
+  #Création automatique des dossiers de montage avec les bons droits
+  systemd.tmpfiles.rules = [
+    "d /media/data-externe 0755 david david -"
+    "d /home/david/Games 0755 david david -"
+  ];
 }

@@ -65,6 +65,14 @@ programs.bash.shellAliases = {
 	monip="curl ipinfo.io/ip";
   };
 
+#Horodatage du history en couleur ignore les doublons de commandes
+environment.interactiveShellInit = ''
+  export HISTTIMEFORMAT="$(echo -e '\e[1;34m%F \e[1;36m%T \e[0m')"
+  export HISTSIZE=10000
+  export HISTFILESIZE=20000
+  export HISTCONTROL=ignoreboth
+'';
+
 # Firefox 100% Français
 programs.firefox = {
   enable = true;
