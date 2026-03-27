@@ -9,8 +9,9 @@
 	fastfetch
 	dnsutils  
 	smbclient-ng
+    micro 			# Editeur comme nano en mieux ;)
 
-        # Web
+    # Web
 	discord
 	chromium
 	teamviewer 		# Ne pas oublier de demarrer le service
@@ -23,12 +24,12 @@
 	hunspell
 	hunspellDicts.fr-moderne
 	#Virtualisation
-	qemu #hyperviseur qemu
-	quickemu # Outils qemu voir https://github.com/quickemu-project/quickemu
+	qemu 			# hyperviseur qemu
+	quickemu 		# Outils qemu voir https://github.com/quickemu-project/quickemu
 	# Autres
 	celluloid
 	vscodium
-	samba # Test pour acces a partage copieur samba
+	samba 			# Test pour acces a partage copieur samba
  ];
 
 # Flatpak
@@ -63,18 +64,26 @@ programs.bash.shellAliases = {
 	nix-upgrade="/bin/sh ~/Scripts/nix-up.sh";
 	monip="curl ipinfo.io/ip";
   };
-# Firefox
-programs = {
-    firefox = {
-      enable = true;
-      wrapperConfig = {
-        pipewireSupport = true;
-      };
-      languagePacks = [ "fr" "en-US" ];
-      preferences = {
-        "intl.accept_languages" = "fr-fr,en-us,en";
-        "intl.locale.requested" = "fr,en-US";
-      };
-    };
+
+# Firefox 100% Français
+programs.firefox = {
+  enable = true;
+  # On ne garde que le français ici
+  languagePacks = [ "fr" ];
+  
+  wrapperConfig = {
+    pipewireSupport = true;
   };
-} 
+
+  policies = {
+    # On force uniquement le français au niveau du moteur
+    RequestedLocales = [ "fr" ];
+    SpellCheckingDictionaries = [ "fr" ];
+  };
+
+  preferences = {
+    "intl.accept_languages" = "fr-fr,fr";
+    "intl.locale.requested" = "fr";
+  };
+};
+}
