@@ -8,7 +8,6 @@
     ./gnome.nix
     ./fstrim.nix
     ./gaming.nix
-    #./firefox.nix
     ./pipewire.nix
     ./nvidia.nix
     ./imprimante.nix
