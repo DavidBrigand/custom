@@ -5,10 +5,10 @@
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   services = {
     udev.packages = [ pkgs.gnome-settings-daemon ];
-    xserver = {
-      displayManager.gdm.enable = lib.mkDefault true;
-      desktopManager.gnome.enable = lib.mkDefault true;
-    };
+    #xserver = {
+    #  displayManager.gdm.enable = lib.mkDefault true;
+    #  desktopManager.gnome.enable = lib.mkDefault true;
+    #};
   };
   documentation.nixos.enable = false;
 
@@ -30,13 +30,13 @@
     # gnome
     gnome-tweaks
 
-    # Extension
+    # Extensions Gnome
     gnomeExtensions.caffeine
     gnomeExtensions.gsconnect
     gnomeExtensions.appindicator
     gnomeExtensions.dash-to-dock
-    # Mes extensions
     gnomeExtensions.executor
+    gnomeExtensions.clipboard-history
   ];
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
