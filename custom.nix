@@ -58,9 +58,9 @@ services.samba.nmbd.enable = true;
 programs.bash.shellAliases = {
 	nix-switch="sudo nixos-rebuild switch";
 	nix-list="nixos-rebuild list-generations";
-	nix-clean="sudo nix-collect-garbage --delete-older-than 30d && sudo nixos-rebuilt switch";
+	nix-clean = "sudo nix-collect-garbage --delete-older-than 30d && sudo /run/current-system/bin/switch-to-configuration boot";
+	#nix-clean="sudo nix-collect-garbage --delete-older-than 30d && sudo nixos-rebuild switch";
 	nix-rollback="sudo nixos-rebuild switch --rollback";
-	update-glf="sudo bash /etc/update-glf-config.sh";
 	nix-upgrade="/bin/sh ~/Scripts/nix-up.sh";
 	monip="curl ipinfo.io/ip";
   };
